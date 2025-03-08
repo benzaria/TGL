@@ -1,0 +1,16 @@
+
+__*
+\!*
+
+.vscode/
+.history/
+node*/
+vbs/
+test/
+dep/
+dist/
+
+*lock*
+
+
+
