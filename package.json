@@ -1,27 +1,40 @@
 {
-  "name": "gl",
-  "version": "1.0.0",
-  "description": "",
+  "name": "tgl",
+  "version": "0.0.2",
+  "description": "Terminal Game Launcher",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
     "start": "tsx .",
-    "tsx": "tsx"
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
   },
-  "keywords": [],
+  "keywords": [
+    "terminal",
+    "game",
+    "launcher"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.5.2",
   "devDependencies": {
     "@types/node": "^22.13.9",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
   "dependencies": {
     "@benzn/to-ms": "^1.2.3",
     "@inquirer/prompts": "^7.3.2",
-    "blessed": "^0.1.81",
     "commander": "^13.1.0",
     "keypress": "^0.2.1",
     "string.chalk": "1.0.1-exp"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ],
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 import { exit, stdout } from 'node:process'
 import { readdir } from 'node:fs/promises'
-import { keypress } from './utils/helper'
+import { keypress, cleanup } from './utils/helper'
 import * as inq from '@inquirer/prompts'
 import { clear } from 'node:console'
 import { lookupGame } from './core'
@@ -23,7 +23,7 @@ stdout.write('\x1b[?1049h')
 
 main()
 keypress()
-setTimeout(() => exit(), ms('30s'))
+setTimeout(() => cleanup(), ms('30s'))
 
 async function main() {
     clear()

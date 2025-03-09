@@ -5,8 +5,10 @@ import { main } from '..'
 function dateColor(date: Date, minDate: number, maxDate: number) {
     const dateValue = new Date(date).getTime()
     const ratio = (dateValue - minDate) / (maxDate - minDate)
-    const obj = { 91: 91, 92: 93, 93: 92, 94: 94, }
-    return obj[Math.round(91 + (94 - 91) * ratio) as keyof typeof obj]
+    const obj: { [key: number]: AnsiStyles } = { 
+        0: 'redBright', 1: 'yellowBright', 2: 'greenBright', 3: 'cyanBright', 4: 'blueBright' 
+    }
+    return obj[Math.round(4 * ratio) as keyof typeof obj]
 }
 
 function randColor(min: number = 91, max: number = 97) {

@@ -21,7 +21,9 @@ async function lookupGame(gameDir: string, game: string, depth = 0) {
     } else if (extname(path) === '.exe') {
         GLdate.push(stats.mtimeMs)
         if (skipReg.test(path) && !argv.includes('--all')) return obj
-        obj[basename(path)] = { path, date: stats.mtime, short: stats.mtime.toISOString().slice(0, 10) }
+        let name = basename(path).replace('.exe', '')
+        if (name.includes('32')) obj.x32 = 'x32'._link(path)
+        else obj[name] = { path, date: stats.mtime, short: stats.mtime.toISOString().slice(0, 10) }
     }
 
     return obj
